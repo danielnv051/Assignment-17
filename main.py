@@ -8,8 +8,7 @@ def test():
 
 my_app = QApplication([])
 loader = QUiLoader()
-my_window = loader.load("mywin.ui")
+my_window = loader.load("newwin.ui")
 my_window.show()
-
-my_window.pushButton.clicked.connect(test)
-my_app.exec()
+my_window.pushButton.clicked.connect()
+my_app.exec_()
