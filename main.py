@@ -1,14 +1,16 @@
-from PySide6.QtWidgets import QApplication
-from PySide6.QtUiTools import QUiLoader
+import sys
+from PySide6 import QtCore, QtGui, QtWidgets
+from PySide6 import uic
 
 
-def test():
-    print('salam salam')
+class MainWindow(QtWidgets.QMainWindow):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        uic.loadUi("newwin.ui", self)
 
 
-my_app = QApplication([])
-loader = QUiLoader()
-my_window = loader.load("newwin.ui")
-my_window.show()
-my_window.pushButton.clicked.connect()
-my_app.exec_()
+app = QtWidgets.QApplication([])
+window = MainWindow()
+window.show()
+app.exec()
